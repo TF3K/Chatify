@@ -29,7 +29,10 @@ android {
 }
 
 dependencies {
-
+    implementation 'androidx.recyclerview:recyclerview:1.2.1' // For chat lists
+    implementation 'com.google.android.material:material:1.9.0' // Material design components
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // Flexible layouts
+    implementation 'androidx.cardview:cardview:1.0.0' // For cards in messages
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
