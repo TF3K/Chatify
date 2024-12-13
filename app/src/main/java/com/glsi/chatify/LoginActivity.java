@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private SQLiteHelper sqliteHelper;  // SQLiteHelper instance
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
+
+        sqliteHelper = new SQLiteHelper(this);  // Initialize SQLiteHelper
 
         // Handle login button click
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -43,11 +46,12 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Perform login (Mock Authentication)
-                if (email.equals("test@example.com") && password.equals("password")) {
+                // Perform login (Authenticate using SQLite database)
+                boolean isValidUser = sqliteHelper.checkUserCredentials(email, password);
+                if (isValidUser) {
                     Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
-                    // Navigate to another activity
+                    // Navigate to the main activity
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish(); // Close the login activity
