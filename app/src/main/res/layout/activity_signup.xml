@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity">
+    tools:context=".SignUpActivity">
 
     <!-- Linear layout to contain all the views -->
     <LinearLayout
@@ -75,10 +75,10 @@
 
         <!-- Login Button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/loginButton"
+            android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log In"
+            android:text="Sign Up"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:padding="12dp"

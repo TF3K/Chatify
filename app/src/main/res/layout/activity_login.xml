@@ -69,6 +69,7 @@
         <!-- Text view displaying the text
                 "Forgot your login details?"-->
         <TextView
+            android:id="@+id/forgotTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/forgot"
@@ -86,9 +87,10 @@
     <!-- text view to show the message
         "Dont have an account?Sign up-->
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sign_up"
+        android:id="@+id/signUpTextView"
         android:text="@string/sign_up"
         android:textSize="12sp"
         android:textAlignment="center"
