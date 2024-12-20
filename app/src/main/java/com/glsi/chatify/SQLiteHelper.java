@@ -49,9 +49,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     // Method to add a new user
     public boolean addUser(User user) {
-        SQLiteDatabase db = null;
-        try {
-            db = this.getWritableDatabase();
+        try (SQLiteDatabase db = this.getWritableDatabase()) {
             ContentValues values = new ContentValues();
             values.put(COLUMN_FULL_NAME, user.getFullName());
             values.put(COLUMN_EMAIL, user.getEmail());
@@ -65,11 +63,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         } catch (Exception e) {
             e.printStackTrace();
             return false; // Return false in case of an error
-        } finally {
-            if (db != null) {
-                db.close(); // Ensure the database connection is closed
-            }
         }
+        // Ensure the database connection is closed
     }
 
 

@@ -52,7 +52,9 @@
             android:layout_marginTop="16dp"
             android:hint="Password"
             android:background="@drawable/background_edit_text"
-            android:drawableRight="@drawable/baseline_remove_red_eye_24" />
+            android:drawableRight="@drawable/baseline_remove_red_eye_24"
+            android:inputType="textPassword"
+            />
 
         <!-- material button is used to display the "Login" button to user-->
         <com.google.android.material.button.MaterialButton
